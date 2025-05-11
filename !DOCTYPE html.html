@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA PRINCIPAL</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .tab-menu {
+            background-color: #ddd;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .tab-menu button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 1em;
+        }
+        .tab-menu button:hover {
+            background-color: #ccc;
+        }
+        .tab-menu button.active {
+            background-color: #555;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 0px; /* Reduced padding */
+            border: 0px solid #ccc;
+            border-top: none;
+            background-color: white;
+            margin: 0px auto;
+            max-width: 10000px;
+        }
+        .tab-content.active {
+            display: block; /* Changed to block to show the initial tab */
+            padding: 0px; /* Reduced padding */
+            border: 0px solid #ccc;
+            border-top: none;
+            background-color: white;
+            margin: 0px auto;
+            max-width: 10000px;
+        }
+        .logo-small {
+            max-height: 50px;
+            vertical-align: middle;
+            margin-right: 0px;
+        }
+        #Inicio iframe,
+        #Pagina1 iframe,
+        #Pagina2 iframe,
+        #Pagina3 iframe,
+        #Pagina4 iframe,
+        #Localhost iframe,
+        #PaginaEstatica iframe {
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+            border: none; /* Remove iframe border if desired */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Portafolio Web</h1>
+    </header>
+
+    <div class="tab-menu">
+        <button class="tablinks active" onclick="openTab(event, 'Inicio')">
+            Inicio
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Pagina1')">Pagina 1</button>
+        <button class="tablinks" onclick="openTab(event, 'Pagina2')">Pagina 2</button>
+        <button class="tablinks" onclick="openTab(event, 'Pagina3')">Pagina 3</button>
+        <button class="tablinks" onclick="openTab(event, 'Pagina4')">Pagina 4</button>
+        <button class="tablinks" onclick="openTab(event, 'Localhost')">Localhost</button>
+        <button class="tablinks" onclick="openTab(event, 'PaginaEstatica')">Pagina Estatica</button>
+    </div>
+
+    <div id="Inicio" class="tab-content active">
+        <iframe src="https://12nose.github.io/dzibadrian/Inicio/index.html"></iframe>
+    </div>
+
+    <div id="Pagina1" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Tarea1/index.html"></iframe>
+    </div>
+
+    <div id="Pagina2" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Tarea2/index.html"></iframe>
+    </div>
+
+    <div id="Pagina3" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Tarea3/index.html"></iframe>
+    </div>
+
+    <div id="Pagina4" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Tarea4/index.html"></iframe>
+    </div>
+
+    <div id="Localhost" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Localhost/index.html"></iframe>
+    </div>
+
+    <div id="PaginaEstatica" class="tab-content">
+        <iframe src="https://12nose.github.io/dzibadrian/Paginaestatica/index.html"></iframe>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
